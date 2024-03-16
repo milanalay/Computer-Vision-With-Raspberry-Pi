@@ -1,0 +1,10 @@
+absl-py==2.1.0
+cffi==1.16.0
+flatbuffers==24.3.7
+numpy==1.26.4
+opencv-python==4.9.0.80
+protobuf==3.20.3
+pybind11==2.11.1
+pycparser==2.21
+sounddevice==0.4.6
+tflite-support==0.4.4
