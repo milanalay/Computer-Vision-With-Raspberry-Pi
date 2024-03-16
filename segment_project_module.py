@@ -31,9 +31,11 @@ _BATCH_SIZE = 1
 
 
 class ImageSegmenter:
-    def __init__(self, model_name, num_threads):
+    def __init__(self, model_name, num_threads, enable_edgetpu, camera_id):
         self.model_name = model_name
         self.num_threads = num_threads
+        self.enable_edgetpu = enable_edgetpu
+        self.camera_id = camera_id
 
         self.base_options = self._create_base_options()
         self.segmentation_options = processor.SegmentationOptions(
@@ -46,7 +48,9 @@ class ImageSegmenter:
     def _create_base_options(self):
         base_options = core.BaseOptions(
             file_name=_MODELS[self.model_name],
-            num_threads=self.num_threads)
+            num_threads=self.num_threads,
+            use_coral = self.enable_edgetpu,
+            )
 
         return base_options
     
