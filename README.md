@@ -42,3 +42,4 @@ To run this project to your device, run the following commands in the terminal
    
     python segment_macbook_camera.py
 
+(Note: For running the program on macbook, you can adjust the camera parameter for cv2.VideoCapture(1) function in line 57 inside the run() function as 0 or 1 depending on the system preferences of your device. 0 stands for primary camera and 1 stands for secondary camera)
